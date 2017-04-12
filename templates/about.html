@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+
+    <title>so many cooks! sifting comments to optimize your favorite recipe</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.css" type="text/css"> -->
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../static/css/new-age.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/new-age.css" type="text/css">     
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../static/vendor/device-mockups/device-mockups.min.css">
+
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="../static/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="../static/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body id="page-top">
+
+    <nav id="mainNav" class="bg-about navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="color: #fdcc52; text-transform: uppercase;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/#search" class="page-scroll" style="text-transform: uppercase;">Find a recipe</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-center">
+                    <!-- <li><a href="/#search" class="page-scroll" >Find a recipe</a></li> -->
+                    <li><a href="/#comment-check" class="page-scroll">Check your comment</a></li>
+                    <li><a href="recipe_index" class="recipe_index" >Browse Recipes</a></li>
+                    <li><a href="about" class="menu" >About</a></li>
+                    <li><a href="#contact" class="menu">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <section id="about" class="download bg-about text-center">
+        <h1 style="text-align: left; margin-left: 200px;">About</h1>
+        <br/> 
+        <p  style="text-align: left; margin-left: 200px; margin-right: 200px;">
+        If you enjoy cooking or baking, chances are that you have searched online for new recipes to try. 
+
+        Once you get beyond the problem of choosing between the hundreds of similar recipes availabe, you immediately run into another problem: how do you know if the recipe is correct as written? Are there any changes that can or must be made to the directions or ingredients that would better ensure the success of a given recipe? 
+
+        The obvious solution to this recipe quality assurance problem is to check out the comments sections. Other users of the site who have previously followed the posted recipe will leave feedback on their successes and/or failures with the posted directions, as well as mentioning any changes they have made (such as additions or substitutions of ingredients to accomodate specific food preferences or dietary restrictions). 
+        </p>
+        <p  style="text-align: left; margin-left: 200px; margin-right: 200px;">
+        However, this is still problematic, as the comments sections often span tens of pages, and contain hundreds or even thousands of comments. Clearly, for a recipe you want to make immediately, reading through all, or even just a fraction, of these comments is impractical. Furthermore, the comments containing useful suggestions for modifications make up only a small fraction of the total comment corpus. A significant fraction of users' comments include how they feel about the recipe (eg. 'I loved this') without including actionable suggestions for improvements, or are entirely off-topic, particularly on blog posts, where there is a large and often chatty social following. The ability to weed out these extraneous or irrelevant statements and highlight statements with actionable suggestions would improve user experience greatly. 
+        </p>
+        <p  style="text-align: left; margin-left: 200px; margin-right: 200px;">
+        <em>So many cooks!</em> solves this problem by applying natural language processing (NLP) and supervised machine learning to sift through recipe comments data and identify these actionable statements. This web app takes the name of a recipe that the user is interested in, applies a trained logistic classifier to sort through the user comments associated with that recipe, and returns to the user a subset of comments that have been identified as being helpful. Thus, this app allows the user can gain useful insights into the ways in which a recipe can be modified to ensure success or to better suit their tastes by reading a small fraction of the total number of posted comments, saving time and improving user experience. 
+        </p>
+    </section>
+
+    <!-- presentation -->
+    <section id="slides" class="download bg-about text-center">
+        <iframe src="https://docs.google.com/presentation/d/194ih3BROWHAtlbd4hSPSBXGwHPd9AlH8J0U72AJhC4E/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </section>
+
+
+    <footer id="contact" class="contact text-center">
+        <div class="container">
+        <span style="font-size: 24px; color:#fdcc52; "> contact: 
+        <a style="padding-left:25px;"  href="https://www.linkedin.com/in/alisonkspencer"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+
+        <a style="padding-left:25px;" href="https://github.com/katelie"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+
+        <a style="padding-left:25px;" href=mailto:alison@somanycooks.xyz><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
+<!--         </span>
+        <span style="font-size: 24px; color:#fdcc52; padding-left:200px;"> 
+        <i class="fa fa-copyright" aria-hidden="true"></i>  Alison Spencer, 2016
+        </span>
+ -->            
+        </div>
+    </footer>
+
+
+        <!-- jQuery -->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../static/js/new-age.min.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+.DS_Store
+UserInfo.*
+*.pyc
+*.log
+static/data/*

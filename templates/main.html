@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>so many cooks! sifting comments to optimize your favorite recipe</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.autocomplete.css" />
+
+
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="../static/css/new-age.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/new-age.css" type="text/css">     
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../static/vendor/device-mockups/device-mockups.min.css">
+
+
+    <!-- Bootstrap select  (http://silviomoreto.github.io/bootstrap-select/examples/) -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.11.2/js/i18n/defaults-*.min.js"></script>
+
+
+<!--     <script type="text/javascript">
+    $(document).ready(function() {
+        $('#multiselect').trigger('change');
+        // $('select.selectpicker').on('change', function(){
+        //     var selected = $(this).find("option:selected").val();
+        //     // return selectedCountry
+        //     // alert("name" + selectedCountry);
+        // });
+    });
+
+    </script>
+
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.selectpicker').selectpicker({
+      });
+    });
+    </script> -->
+
+</head>
+
+
+<body id="page-top">
+
+    <nav id="mainNav" class="bg-about navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" style="color: #fdcc52;">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/#search" class="page-scroll" style="text-transform: uppercase;">Find a recipe</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-center">
+                    <!-- <li><a href="/#search" class="page-scroll" >Find a recipe</a></li> -->
+                    <li><a href="/#comment-check" class="page-scroll">Check your comment</a></li>
+                    <li><a href="recipe_index" class="recipe_index" >Browse Recipes</a></li>
+                    <li><a href="about" class="menu" >About</a></li>
+                    <li><a href="#contact" class="menu">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <header>
+        <section id="search" class="container">
+            <div class="row">
+                <div class="header-content">
+                    <div class="header-content-inner">
+                        <div class="input-recipe">
+
+                        <h1 style="font-size: 40pt"><strong>Find your recipe</strong></h1>
+                        <h3>What recipe do you want to see suggestions for?</h3>
+
+
+                        <form  action="/search" method="GET" id=recipe_choice_form name=recipe_choice_form type="submit"  value="Submit">
+                        <select type="submit" name="recipe_choice" id="recipe_choice" class="selectpicker" title="start typing...." data-live-search="true" mobile="true" data-width="auto" onchange="this.form.submit()" dropupAuto="false">
+                            
+                            {% for title in autocomplete_list %}
+                                <option>{{title}}</option>
+                            {% endfor %} 
+
+                        </select>
+                        <button id=recipe_choice_button name=recipe_choice_button type="submit" class="btn btn-default btn-med" style="color:#002a40; font-weight: bold;" value="Submit" >Find!</button>
+                        </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+
+
+
+
+    <section id="comment-check" class="download bg-yellow text-center">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 style="font-size: 40pt"><strong>Will your comment register as 'helpful'?</strong></h1>
+                <h3>Before you post it, check whether your comment is likely to be considered helpful</h3> 
+                    <form  action="/check" method="GET" id=commentchecker name=commentchecker>
+                      <div id="input" class="input" style="text-align:center; vertical-align:top; word-wrap: break-word;">
+                      <textarea id="comment_check" name='comment_check' placeholder="your comment here" style="color:black; font-size:16pt"  cols="40" rows="10"></textarea>
+                        <p>   </p> 
+                        <div>
+                        <button type="submit" class="btn btn-default btn-lg">Check your comment!  </button>
+                        </div>
+                      </div>
+                    </form>
+
+              <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+              <script src="static/js/bootstrap.min.js"></script>
+            </div> 
+        </div>
+    </section>
+
+
+
+
+
+    <footer id="contact" class="contact text-center">
+        <div class="container">
+        <span style="font-size: 24px; color:#fdcc52; "> contact: 
+        <a style="padding-left:25px;"  href="https://www.linkedin.com/in/alisonkspencer"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+
+        <a style="padding-left:25px;" href="https://github.com/katelie"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+
+        <a style="padding-left:25px;" href=mailto:alison@somanycooks.xyz><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
+
+        <!-- <a style="padding-left:25px; color:#fdcc52; " href="../static/AlisonSpencer_Resume.pdf"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a> -->
+
+        <!--    <a style="padding-left:25px; color:#fdcc52; " href="../static/AlisonSpencer_Resume.pdf"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a>
+-->
+        </span>
+
+        </div>
+    </footer>
+
+
+
+
+<!--     <footer id="contact" class="contact text-center">
+        <div class="container">
+        <span>
+ -->        <!-- <span style="font-size: 24px; color:#fdcc52; "> contact:  -->
+<!--         <a style="padding-left:25px;"  href="https://www.linkedin.com/in/alisonkspencer"><i class="fa fa-linkedin fa-2x" aria-hidden="true"></i></a>
+
+        <a style="padding-left:25px;" href="https://github.com/katelie"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+
+        <a style="padding-left:25px;" href="mailto:spencer.alisonk+somanycooks@gmail.com"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></a>
+
+        <a style="padding-left:25px;" href="../static/AlisonSpencer_Resume.pdf"><i class="fa fa-text-o fa-2x" aria-hidden="true"></i></a>
+        </span>
+
+        <span style="font-size: 24px; color:#fdcc52; padding-left:200px;"> 
+        <i class="fa fa-copyright" aria-hidden="true"></i>  Alison Spencer, 2016
+        </span>
+            
+        </div>
+    </footer>
+ -->
+
+
+
+<!--     <footer id="contact" class="contact text-center">
+        <div class="container">
+        <span> 
+        <a href="https://www.linkedin.com/in/alisonkspencer"><i class="fa fa-linkedin fa-4x" aria-hidden="true"></i></a>
+
+        <a style="padding-left:30px;" href="https://github.com/katelie"><i class="fa fa-github fa-4x" aria-hidden="true"></i></a>
+
+        <a style="padding-left:30px;" href=mailto:spencer.alisonk+somanycooks@gmail.com  ><i class="fa fa-envelope-o fa-4x" aria-hidden="true"></i></a>
+
+        <a style="padding-left:30px;" href="../static/AlisonSpencer_Resume.pdf"><i class="fa fa-file-text-o fa-4x" aria-hidden="true"></i></a>
+
+        </span>
+        <br/>
+        <span style="font-size: 12px; color:#fdcc52;" class="text-right"> 
+        <i class="fa fa-copyright" aria-hidden="true"></i>  Alison Spencer, 2016
+        </span>
+            
+        </div>
+    </footer> -->
+
+
+
+
+
+
+        <!-- jQuery -->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="../static/js/new-age.min.js"></script>
+
+
+</body>
+
+
+
+</html>
