@@ -1,7 +1,8 @@
-from flask import render_template, request
-from somanycooks import app
+from flask import Flask, render_template, request
 import pandas as pd
 import psycopg2
+
+app = Flask(__name__)
 
 from Models import GetComments, CommentChecker
 from UserInfo import user, host, dbname
