@@ -2,12 +2,12 @@ from flask import Flask, render_template, request
 import pandas as pd
 import psycopg2
 
-app = Flask(__name__)
-
 from Models import GetComments, CommentChecker
 from UserInfo import user, host, dbname
 
+app = Flask(__name__)
 
+# psql connection
 con = None
 con = psycopg2.connect(database = dbname, user=user,host=host)
 
