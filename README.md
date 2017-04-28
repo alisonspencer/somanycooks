@@ -6,5 +6,4 @@ _so many cooks!_ solves this problem by applying natural language processing (NL
 
 I created this app in less than 4 weeks during my time as a fellow at Insight Data Science, which is a 7-week long postdoctoral fellowship to help PhDs transition from working with data in an academic setting to jobs in the data science industry.  
 
-
-<iframe src="https://docs.google.com/presentation/d/194ih3BROWHAtlbd4hSPSBXGwHPd9AlH8J0U72AJhC4E/embed?start=false&loop=false&delayms=3000" frameborder="0" width="500" height="400" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+https://drive.google.com/open?id=194ih3BROWHAtlbd4hSPSBXGwHPd9AlH8J0U72AJhC4E
